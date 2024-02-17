@@ -1,6 +1,5 @@
-import {AppButton, AppText} from "./app/ui/atoms";
-
+import {WelcomeScreen} from "./app/screens";
 
 export default function App() {
-  return <AppButton title={"Login"} onPress={()=>{console.log('tapped')}}/>
+  return <WelcomeScreen/>
 }

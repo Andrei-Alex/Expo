@@ -6,15 +6,9 @@ export const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  loginButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#fc5c65",
-  },
-  registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#4ecdc4",
+  buttonsContainer : {
+    width: '100%',
+    padding: 20,
   },
   logoContainer: {
     position: "absolute",
@@ -25,4 +19,9 @@ export const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
+  tagLine: {
+    fontSize: 20,
+    fontWeight: "600",
+    paddingVertical: 20,
+  }
 });
