@@ -1,6 +1,4 @@
-import {ColorPalette} from ".";
-
-const colors: ColorPalette = {
+const colors: Record<string, string> = {
     primary: '#fc5c65',
     secondary: '#4ecdc4',
     black : '#000',
