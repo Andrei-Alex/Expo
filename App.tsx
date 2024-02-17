@@ -1,7 +1,6 @@
-import {ViewImageScreen} from "./app/screens";
+import React from 'react';
+import { ViewImageScreen } from './app/screens';
 
 export default function App() {
-    return (
-       <ViewImageScreen/>
-    )
+  return <ViewImageScreen />;
 }

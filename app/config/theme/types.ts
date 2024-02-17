@@ -1,3 +1,3 @@
 export type ColorPalette = {
-    [key: string]: string;
+  [key: string]: string;
 };

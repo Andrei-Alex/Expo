@@ -1,2 +1,2 @@
-export { styles } from "./styles";
-export * from "./types";
+export { styles } from './styles';
+export * from './types';
