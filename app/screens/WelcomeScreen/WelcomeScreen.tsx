@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, ImageBackground, Text, View } from "react-native";
+
 import { styles } from ".";
 import {AppButton} from "../../ui/components";
 

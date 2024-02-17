@@ -3,9 +3,9 @@ import {Text} from "react-native";
 
 import {styles, Props} from ".";
 
-const AppText: React.FC<Props> = ({children}) => {
+const AppText: React.FC<Props> = ({children, style}) => {
     return (
-        <Text style={styles.text}>
+        <Text style={[styles.text, style]}>
             {children}
         </Text>
     );
