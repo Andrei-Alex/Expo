@@ -1,9 +1,7 @@
-import {View} from "react-native";
-import {Card} from "./app/ui/components";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen/ListingDetailsScreen";
+import {ViewImageScreen} from "./app/screens";
 
 export default function App() {
     return (
-       <ListingDetailsScreen />
+       <ViewImageScreen/>
     )
 }

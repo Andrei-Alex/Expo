@@ -6,17 +6,11 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   closeIcon: {
-    width: 50,
-    height: 50,
-    backgroundColor: colors.primary,
-    position: "absolute",
+     position: "absolute",
     top: 40,
     left: 30,
   },
   deleteIcon: {
-    width: 50,
-    height: 50,
-    backgroundColor: colors.secondary,
     position: "absolute",
     top: 40,
     right: 30,
