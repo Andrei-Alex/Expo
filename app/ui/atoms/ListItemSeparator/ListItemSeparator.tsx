@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { styles, Props } from '.';
 
 const ListItemSeparator: React.FC<Props> = ({ style }) => {
-  return <View style={[styles.separator, style]}></View>;
+  return <View style={[styles.separator, style]} />;
 };
 
 export default ListItemSeparator;
