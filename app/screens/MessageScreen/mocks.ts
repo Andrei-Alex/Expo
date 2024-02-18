@@ -6,7 +6,7 @@ export const dummyMessages = [
     image: require('../../assets/logo-red.png')
   },
   {
-    id: 1,
+    id: 2,
     title: 'Second Title',
     description: 'Second Description',
     image: require('../../assets/logo-red.png')
