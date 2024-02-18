@@ -1,8 +1,8 @@
-import { StatusBar, StyleSheet } from 'react-native';
-import { isAndroid } from '../../config';
+import { StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 
 export const styles = StyleSheet.create({
   screen: {
-    paddingTop: isAndroid ? StatusBar.currentHeight : 0
+    paddingTop: Constants.statusBarHeight
   }
 });

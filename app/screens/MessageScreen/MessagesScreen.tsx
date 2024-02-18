@@ -5,7 +5,7 @@ import { ListItem } from '../../ui/components';
 
 function MessagesScreen() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.screen}>
       <FlatList
         data={dummyMessages}
         keyExtractor={(message) => message.id.toString()}
