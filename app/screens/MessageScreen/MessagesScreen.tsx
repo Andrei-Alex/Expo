@@ -1,9 +1,9 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { dummyMessages } from '.';
 import { ListItem } from '../../ui/components';
 import { MainScreen } from '../../ui/layouts';
-import { ListItemSeparator } from '../../ui/atoms';
+import { ListDeleteItemAction, ListItemSeparator } from '../../ui/atoms';
 
 function MessagesScreen() {
   return (
@@ -17,6 +17,7 @@ function MessagesScreen() {
             image={item.image}
             subTitle={item.description}
             onPress={() => console.log('Selected: ', item)}
+            renderRightActions={() => <ListDeleteItemAction />}
           />
         )}
         ItemSeparatorComponent={() => <ListItemSeparator />}

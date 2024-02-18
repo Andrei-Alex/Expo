@@ -4,6 +4,7 @@ const colors: Record<string, string> = {
   medium: '#6e6969',
   light: '#f8f4f4',
   black: '#000',
-  white: '#fff'
+  white: '#fff',
+  danger: '#ff5252'
 };
 export default colors;
