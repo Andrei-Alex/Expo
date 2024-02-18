@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AppText applies style correctly 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Avenir",
+        "fontSize": 20,
+      },
+      {
+        "color": "blue",
+        "fontSize": 20,
+      },
+    ]
+  }
+>
+  Styled Test
+</Text>
+`;
+
 exports[`AppText renders correctly 1`] = `
 <Text
   style={
