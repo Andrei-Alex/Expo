@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
+    "test": "jest",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
