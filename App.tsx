@@ -6,15 +6,16 @@ if (__DEV__) {
 
 import React from 'react';
 import { Icon } from './app/ui/atoms';
+import { ListItem } from './app/ui/components';
 
 export default function App() {
   return (
     <MainScreen>
-      <Icon
-        name={'email'}
-        size={50}
-        backgroundColor={'red'}
-        iconColor={'white'}
+      <ListItem
+        title={'My title'}
+        onPress={() => console.log()}
+        ImageComponent={<Icon name={'email'} />}
+        renderRightActions={() => <Icon name={'email'} />}
       />
     </MainScreen>
   );
