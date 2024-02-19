@@ -1,4 +1,6 @@
-export const dummyMessages = [
+import { IListMessage } from './types';
+
+export const dummyMessages: IListMessage[] = [
   {
     id: 1,
     title: 'Fist Title',
