@@ -9,6 +9,7 @@ import { colors } from '../../../config';
 const ListItem: React.FC<Props> = ({
   title,
   subTitle,
+  ImageComponent,
   image,
   onPress,
   renderRightActions
@@ -18,10 +19,13 @@ const ListItem: React.FC<Props> = ({
       <Swipeable renderRightActions={renderRightActions}>
         <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
           <View style={styles.container}>
-            <Image style={styles.image} source={image} />
-            <View>
+            {ImageComponent}
+            {image && <Image style={styles.image} source={image} />}
+            <View style={styles.detailsContainer}>
               <AppText style={styles.title}>{title}</AppText>
-              <AppText style={styles.subtitle}>{subTitle}</AppText>
+              {subTitle && (
+                <AppText style={styles.subtitle}>{subTitle}</AppText>
+              )}
             </View>
           </View>
         </TouchableHighlight>
