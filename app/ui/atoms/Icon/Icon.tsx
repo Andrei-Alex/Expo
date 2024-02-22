@@ -30,16 +30,24 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
  * @param {number} [props.size=40] - The size of the icon and its container. Defaults to 40.
  * @param {string} [props.backgroundColor=colors.black] - The background color of the icon container. Defaults to black.
  * @param {string} [props.iconColor=colors.white] - The color of the icon. Defaults to white.
+ * @param {string} [props.testID] - ID for Jest tests.
  * @returns {React.ReactElement} A customizable icon component that can be easily integrated into React Native applications.
  */
 const Icon: React.FC<Props> = ({
   name,
   size = 40,
   backgroundColor = colors.black,
-  iconColor = colors.white
+  iconColor = colors.white,
+  testID
 }) => {
+  const containerTestID = testID
+    ? `container-${testID}`
+    : `icon-container-${name}`;
+  const iconTestID = testID ? `icon-${testID}` : `icon-${name}`;
+
   return (
     <View
+      testID={containerTestID}
       style={[
         styles.icon,
         {
@@ -50,7 +58,12 @@ const Icon: React.FC<Props> = ({
         }
       ]}
     >
-      <MaterialCommunityIcons name={name} color={iconColor} size={size * 0.5} />
+      <MaterialCommunityIcons
+        name={name}
+        color={iconColor}
+        size={size * 0.5}
+        testID={iconTestID}
+      />
     </View>
   );
 };

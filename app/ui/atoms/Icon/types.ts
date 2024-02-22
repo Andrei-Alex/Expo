@@ -5,4 +5,5 @@ export type Props = {
   size?: number;
   backgroundColor?: string;
   iconColor?: string | OpaqueColorValue;
+  testID?: string;
 };
