@@ -1,4 +1,3 @@
-import { ReactTestRendererJSON } from 'react-test-renderer';
 import { ReactTreeType } from './types';
 /**
  * Recursively searches the rendered component tree for an element with a given testID.
