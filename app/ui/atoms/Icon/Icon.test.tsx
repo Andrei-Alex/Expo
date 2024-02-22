@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import { colors } from '../../../config';
 import Icon from './Icon';
-import { findByTestId } from '../../../helpers/jest';
+import { findByTestId, ReactTreeType } from '../../../helpers';
 
 describe('Icon', () => {
   const defaultIconProps = {
@@ -43,11 +43,11 @@ describe('Icon', () => {
   it('renders correctly and can be found by testID', () => {
     const component = renderer.create(<Icon {...defaultIconProps} />);
 
-    const tree = component.toJSON();
+    const tree: ReactTreeType = component.toJSON() as ReactTreeType;
     const iconContainer = findByTestId(tree, 'container-email-icon');
 
     expect(iconContainer).not.toBeNull();
-    expect(iconContainer.props.style).toEqual(
+    expect(iconContainer?.props.style).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
           backgroundColor: '#f0f'
