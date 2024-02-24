@@ -11,6 +11,6 @@ export interface IListItem {
   subTitle?: string;
   ImageComponent?: React.ReactNode;
   image?: ImageSourcePropType;
-  onPress: () => void;
+  onPress?: () => void;
   renderRightActions?: RenderRightActions;
 }
