@@ -5,7 +5,8 @@ import { colors } from '../../../config';
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 15
+    padding: 15,
+    backgroundColor: colors.white
   },
   detailsContainer: {
     marginLeft: 10,

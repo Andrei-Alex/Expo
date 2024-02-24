@@ -9,7 +9,7 @@ export type RenderRightActions = (
 export interface IListItem {
   title: string;
   subTitle?: string;
-  ImageComponent?: React.ReactNode;
+  IconComponent?: React.ReactNode;
   image?: ImageSourcePropType;
   onPress?: () => void;
   renderRightActions?: RenderRightActions;

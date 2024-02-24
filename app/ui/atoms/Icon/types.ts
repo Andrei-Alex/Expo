@@ -1,10 +1,6 @@
 import { OpaqueColorValue } from 'react-native';
 
-export enum icons {
-  bullet = 'format-list-bulleted',
-  email = 'email',
-  home = 'home'
-}
+export type icons = 'format-list-bulleted' | 'email' | 'logout' | 'home';
 
 export type Props = {
   name: icons;

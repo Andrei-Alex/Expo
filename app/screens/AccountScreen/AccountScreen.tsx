@@ -4,11 +4,11 @@ import { MainScreen } from '../../ui/layouts';
 import { ListItem } from '../../ui/components';
 import { FlatList, View } from 'react-native';
 import { styles, menuItems } from '.';
-import { Icon } from '../../ui/atoms';
+import { Icon, ListItemSeparator } from '../../ui/atoms';
 
-function AcoountScreen() {
+function AccountScreen() {
   return (
-    <MainScreen>
+    <MainScreen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
           title={'Andrei'}
@@ -25,7 +25,7 @@ function AcoountScreen() {
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
-              ImageComponent={
+              IconComponent={
                 <Icon
                   name={item.image.name}
                   backgroundColor={item.image.backgroundColor}
@@ -33,11 +33,16 @@ function AcoountScreen() {
               }
             />
           )}
+          ItemSeparatorComponent={ListItemSeparator}
           keyExtractor={(item) => item.title}
         />
       </View>
+      <ListItem
+        title={'Log Out'}
+        IconComponent={<Icon name="logout" backgroundColor={'#ffe66d'} />}
+      />
     </MainScreen>
   );
 }
 
-export default AcoountScreen;
+export default AccountScreen;
