@@ -2,11 +2,11 @@ import React from 'react';
 import { Image, TouchableHighlight, View } from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { styles, Props } from './index';
+import { styles, IListItem } from './index';
 import { AppText } from '../../atoms';
 import { colors } from '../../../config';
 
-const ListItem: React.FC<Props> = ({
+const ListItem: React.FC<IListItem> = ({
   title,
   subTitle,
   ImageComponent,
