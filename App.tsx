@@ -22,7 +22,7 @@ const categories = [
   }
 ];
 export default function App() {
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState(categories[0]);
 
   return (
     <MainScreen>
