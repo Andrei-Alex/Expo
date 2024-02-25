@@ -11,12 +11,14 @@ export const styles = StyleSheet.create({
     padding: 15,
     marginVertical: 10
   },
-  textInput: {
-    fontSize: 18,
-    fontFamily: fonts.primary,
-    color: colors.dark
-  },
   icon: {
     marginRight: 10
+  },
+  text: {
+    fontFamily: fonts.primary,
+    color: colors.dark,
+    fontSize: 18,
+    marginRight: 10,
+    flex: 1
   }
 });
