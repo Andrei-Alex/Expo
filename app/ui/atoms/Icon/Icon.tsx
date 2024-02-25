@@ -38,7 +38,8 @@ const Icon: React.FC<Props> = ({
   size = 40,
   backgroundColor = colors.black,
   iconColor = colors.white,
-  testID
+  testID,
+  style
 }) => {
   const containerTestID = testID
     ? `container-${testID}`
@@ -55,7 +56,8 @@ const Icon: React.FC<Props> = ({
           height: size,
           borderRadius: size / 2,
           backgroundColor
-        }
+        },
+        style
       ]}
     >
       <MaterialCommunityIcons
