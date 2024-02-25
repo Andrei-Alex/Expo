@@ -1,11 +1,24 @@
 import { AppText, Icon } from '../../atoms';
 import React, { useState } from 'react';
-import { Button, Modal, TouchableWithoutFeedback, View } from 'react-native';
+import {
+  Button,
+  FlatList,
+  Modal,
+  TouchableWithoutFeedback,
+  View
+} from 'react-native';
 import { colors } from '../../../config';
 import { IAppPicker, styles } from './index';
 import { MainScreen } from '../../layouts';
+import { PickerItem } from '../../components';
 
-const AppPicker: React.FC<IAppPicker> = ({ icon = 'apps', placeholder }) => {
+const AppPicker: React.FC<IAppPicker> = ({
+  onSelectItem,
+  selectedItem,
+  items,
+  icon = 'apps',
+  placeholder
+}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -21,7 +34,9 @@ const AppPicker: React.FC<IAppPicker> = ({ icon = 'apps', placeholder }) => {
               style={styles.icon}
             />
           )}
-          <AppText style={styles.text}>{placeholder}</AppText>
+          <AppText style={styles.text}>
+            {selectedItem ? selectedItem.label : placeholder}
+          </AppText>
           <Icon
             name={'chevron-down'}
             size={30}
@@ -34,6 +49,19 @@ const AppPicker: React.FC<IAppPicker> = ({ icon = 'apps', placeholder }) => {
       <Modal visible={modalVisible} animationType={'slide'}>
         <MainScreen>
           <Button title={'Close'} onPress={() => setModalVisible(false)} />
+          <FlatList
+            data={items}
+            keyExtractor={(item) => item.value.toString()}
+            renderItem={({ item }) => (
+              <PickerItem
+                label={item.label}
+                onPress={() => {
+                  setModalVisible(false);
+                  onSelectItem(item);
+                }}
+              />
+            )}
+          />
         </MainScreen>
       </Modal>
     </>
