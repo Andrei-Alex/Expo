@@ -5,7 +5,6 @@ import { ReactTreeType } from './types';
  * @param {string} testID - The testID to search for.
  * @returns {object|null} The found element, or null if not found.
  */
-
 export function findByTestId(
   tree: ReactTreeType,
   testID: string
