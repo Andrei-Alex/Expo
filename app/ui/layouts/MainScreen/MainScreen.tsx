@@ -5,7 +5,9 @@ import { styles, Props } from '.';
 /**
  * MainScreen Component
  *
- * A foundational layout component for React Native applications that ensures content is displayed within the safe area of the device screen. It utilizes a `SafeAreaView` to avoid overlaps with status bars, notches, and other system UI elements on modern devices. The component accepts children elements and an optional style prop to customize its appearance.
+ * A foundational layout component for React Native applications that ensures content is displayed within the safe area of the device screen.
+ * It utilizes a `SafeAreaView` to avoid overlaps with status bars, notches, and other system UI elements on modern devices.
+ * The component accepts children elements and an optional style prop to customize its appearance.
  *
  * ### Usage
  *
