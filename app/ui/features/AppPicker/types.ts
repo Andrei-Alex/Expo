@@ -11,4 +11,6 @@ export interface IAppPicker {
   items: item[];
   icon?: icons;
   placeholder?: string;
+  modalTestId?: string;
+  pickerTestId?: string;
 }

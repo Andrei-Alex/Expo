@@ -45,14 +45,19 @@ const AppPicker: React.FC<IAppPicker> = ({
   onSelectItem,
   selectedItem,
   items,
-  icon = 'apps',
-  placeholder
+  icon,
+  placeholder,
+  modalTestId = 'modalPickerID',
+  pickerTestId = 'pickerTestID'
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <>
-      <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
+      <TouchableWithoutFeedback
+        onPress={() => setModalVisible(true)}
+        testID={pickerTestId}
+      >
         <View style={styles.container}>
           {icon && (
             <Icon
@@ -75,7 +80,11 @@ const AppPicker: React.FC<IAppPicker> = ({
           />
         </View>
       </TouchableWithoutFeedback>
-      <Modal visible={modalVisible} animationType={'slide'}>
+      <Modal
+        visible={modalVisible}
+        animationType={'slide'}
+        testID={modalTestId}
+      >
         <MainScreen>
           <Button title={'Close'} onPress={() => setModalVisible(false)} />
           <FlatList

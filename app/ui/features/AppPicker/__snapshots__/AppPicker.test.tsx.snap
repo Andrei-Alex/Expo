@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppPicker Component renders correctly with a placeholder 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "backgroundColor": "#f8f4f4",
+      "borderRadius": 25,
+      "flexDirection": "row",
+      "marginVertical": 10,
+      "padding": 15,
+      "width": "100%",
+    }
+  }
+  testID="pickerTestID"
+>
+  <Text
+    style={
+      [
+        {
+          "fontFamily": "Avenir",
+          "fontSize": 20,
+        },
+        {
+          "color": "#0c0c0c",
+          "flex": 1,
+          "fontFamily": "Avenir",
+          "fontSize": 18,
+          "marginRight": 10,
+        },
+      ]
+    }
+  >
+    Select an item
+  </Text>
+  <View
+    style={
+      [
+        {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+        {
+          "backgroundColor": "transparent",
+          "borderRadius": 15,
+          "height": 30,
+          "width": 30,
+        },
+        {
+          "marginRight": 10,
+        },
+      ]
+    }
+    testID="icon-container-chevron-down"
+  >
+    <Text />
+  </View>
+</View>
+`;
