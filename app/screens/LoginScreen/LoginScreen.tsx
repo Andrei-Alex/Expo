@@ -16,6 +16,7 @@ const LoginScreen: React.FC = () => {
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}
       >
         {({ handleChange, handleSubmit }) => (
           <>
