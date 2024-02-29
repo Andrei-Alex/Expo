@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { MainScreen } from '../../ui/layouts';
 import { ListItem } from '../../ui/components';

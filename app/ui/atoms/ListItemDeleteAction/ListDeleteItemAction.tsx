@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
