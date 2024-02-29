@@ -26,9 +26,13 @@ import { colors } from '../../../config';
  * @param {TextInputProps} props - Standard TextInput properties such as `placeholder`, `onChangeText`, etc., are also accepted.
  * @returns {React.ReactElement} A customized TextInput component with an optional icon.
  */
-const AppTextInput: React.FC<IAppTextInput> = ({ icon, ...inputProps }) => {
+const AppTextInput: React.FC<IAppTextInput> = ({
+  icon,
+  style,
+  ...inputProps
+}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {icon && (
         <Icon
           name={icon}

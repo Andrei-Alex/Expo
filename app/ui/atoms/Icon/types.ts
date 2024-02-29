@@ -6,7 +6,8 @@ export type icons =
   | 'logout'
   | 'home'
   | 'chevron-down'
-  | 'apps';
+  | 'apps'
+  | 'lock';
 
 export type Props = {
   name: icons;
