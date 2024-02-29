@@ -1,5 +1,5 @@
 import { dummyItems, styles } from '.';
-import React from 'react';
+import * as React from 'react';
 import { FlatList } from 'react-native';
 import { MainScreen } from '../../ui/layouts';
 import { Card } from '../../ui/components';

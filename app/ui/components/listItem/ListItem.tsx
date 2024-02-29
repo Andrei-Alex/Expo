@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Image, TouchableHighlight, View } from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';

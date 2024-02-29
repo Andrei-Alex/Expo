@@ -1,10 +1,10 @@
 import { Image } from 'react-native';
-import React from 'react';
+import * as React from 'react';
 import { MainScreen, AppTextInput, AppButton } from '../../ui';
 
 import { Formik } from 'formik';
 
-import { styles } from '.';
+import { styles, validationSchema } from '.';
 
 const LoginScreen: React.FC = () => {
   return (
