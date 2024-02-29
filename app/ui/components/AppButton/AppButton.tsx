@@ -26,10 +26,15 @@ import { colors } from '../../../config';
  * @returns {React.ReactElement} A safe area aware container that can be used as the main layout component for screens in a React Native application.
  */
 
-const AppButton: React.FC<Props> = ({ title, onPress, color = 'primary' }) => {
+const AppButton: React.FC<Props> = ({
+  title,
+  onPress,
+  color = 'primary',
+  style
+}) => {
   return (
     <TouchableOpacity
-      style={[styles.button, { backgroundColor: colors[color] }]}
+      style={[styles.button, { backgroundColor: colors[color] }, style]}
       onPress={onPress}
     >
       <Text style={styles.text}>{title}</Text>
