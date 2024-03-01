@@ -1,8 +1,6 @@
 import { Image } from 'react-native';
 import * as React from 'react';
-import { MainScreen, AppTextInput, AppButton } from '../../ui';
-
-import { Formik } from 'formik';
+import { MainScreen, AppFormField, AppForm, SubmitButton } from '../../ui';
 
 import { styles, validationSchema } from '.';
 
@@ -13,41 +11,33 @@ const LoginScreen: React.FC = () => {
         style={styles.logo}
         source={require('../../assets/logo-red.png')}
       />
-      <Formik
+      <AppForm
         initialValues={{ email: '', password: '' }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit }) => (
-          <>
-            <AppTextInput
-              style={styles.inputs}
-              placeholder={'Email'}
-              icon={'email'}
-              autoCapitalize={'none'}
-              autoCorrect={false}
-              keyboardType={'email-address'}
-              textContentType={'emailAddress'}
-              onChangeText={handleChange('email')}
-            />
-            <AppTextInput
-              style={styles.inputs}
-              placeholder={'Password'}
-              icon={'lock'}
-              autoCapitalize={'none'}
-              autoCorrect={false}
-              textContentType={'password'}
-              onChangeText={handleChange('password')}
-              secureTextEntry
-            />
-            <AppButton
-              title={'Login'}
-              onPress={handleSubmit}
-              style={styles.inputs}
-            />
-          </>
-        )}
-      </Formik>
+        <AppFormField
+          name={'email'}
+          style={styles.inputs}
+          placeholder={'Email'}
+          icon={'email'}
+          autoCapitalize={'none'}
+          autoCorrect={false}
+          keyboardType={'email-address'}
+          textContentType={'emailAddress'}
+        />
+        <AppFormField
+          name={'password'}
+          style={styles.inputs}
+          placeholder={'Password'}
+          icon={'lock'}
+          autoCapitalize={'none'}
+          autoCorrect={false}
+          textContentType={'password'}
+          secureTextEntry
+        />
+        <SubmitButton title={'Login'} style={styles.inputs} />
+      </AppForm>
     </MainScreen>
   );
 };

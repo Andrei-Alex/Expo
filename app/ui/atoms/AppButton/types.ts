@@ -1,8 +1,8 @@
 import { ViewStyle } from 'react-native';
 
-export type Props = {
+export interface IAppButton {
   title: string;
   onPress: () => void;
   color?: string;
   style?: ViewStyle;
-};
+}
