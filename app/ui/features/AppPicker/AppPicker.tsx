@@ -70,7 +70,7 @@ const AppPicker: React.FC<IAppPicker> = ({
               style={styles.icon}
             />
           )}
-          <AppText style={styles.text}>
+          <AppText style={selectedItem ? styles.text : styles.placeholder}>
             {selectedItem ? selectedItem.label : placeholder}
           </AppText>
           <Icon

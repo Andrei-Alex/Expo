@@ -2,6 +2,12 @@ import { StyleSheet } from 'react-native';
 
 import { colors, fonts } from '../../../config';
 
+const baseTextStyle = {
+  fontFamily: fonts.primary,
+  fontSize: 18,
+  marginRight: 10,
+  flex: 1
+};
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.light,
@@ -15,10 +21,11 @@ export const styles = StyleSheet.create({
     marginRight: 10
   },
   text: {
-    fontFamily: fonts.primary,
-    color: colors.dark,
-    fontSize: 18,
-    marginRight: 10,
-    flex: 1
+    ...baseTextStyle,
+    color: colors.dark
+  },
+  placeholder: {
+    ...baseTextStyle,
+    color: colors.medium
   }
 });
