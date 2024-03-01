@@ -1,8 +1,8 @@
 import { AppText } from '../../atoms';
 import { IErrorMessage, styles } from '.';
 
-const ErrorMessage: React.FC<IErrorMessage> = ({ error }) => {
-  if (!error) return null;
+const ErrorMessage: React.FC<IErrorMessage> = ({ error, visible }) => {
+  if (!visible || !error) return null;
   return <AppText style={styles.error}>{error}</AppText>;
 };
 
