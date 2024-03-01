@@ -13,11 +13,5 @@ export const styles = StyleSheet.create({
   },
   inputs: {
     minHeight: 50
-  },
-  error: {
-    marginBottom: 10,
-    height: 20,
-    fontSize: 14,
-    color: 'red'
   }
 });
