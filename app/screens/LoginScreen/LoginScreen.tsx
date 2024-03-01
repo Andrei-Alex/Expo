@@ -5,7 +5,8 @@ import {
   AppTextInput,
   AppButton,
   AppText,
-  ErrorMessage
+  ErrorMessage,
+  AppFormField
 } from '../../ui';
 
 import { Formik } from 'formik';
@@ -24,9 +25,10 @@ const LoginScreen: React.FC = () => {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
+        {({ handleChange, handleSubmit, setFieldTouched }) => (
           <>
-            <AppTextInput
+            <AppFormField
+              name={'email'}
               onBlur={() => setFieldTouched('email')}
               style={styles.inputs}
               placeholder={'Email'}
@@ -37,8 +39,8 @@ const LoginScreen: React.FC = () => {
               textContentType={'emailAddress'}
               onChangeText={handleChange('email')}
             />
-            <ErrorMessage error={errors.email} visible={touched.email} />
-            <AppTextInput
+            <AppFormField
+              name={'password'}
               onBlur={() => setFieldTouched('password')}
               style={styles.inputs}
               placeholder={'Password'}
@@ -49,7 +51,6 @@ const LoginScreen: React.FC = () => {
               onChangeText={handleChange('password')}
               secureTextEntry
             />
-            <ErrorMessage error={errors.password} visible={touched.password} />
             <AppButton
               title={'Login'}
               onPress={handleSubmit}
