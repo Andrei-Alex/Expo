@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-import { styles, Props } from './index';
+import { styles, IAppButton } from './index';
 import { colors } from '../../../config';
 
 /**
@@ -26,7 +26,7 @@ import { colors } from '../../../config';
  * @returns {React.ReactElement} A safe area aware container that can be used as the main layout component for screens in a React Native application.
  */
 
-const AppButton: React.FC<Props> = ({
+const AppButton: React.FC<IAppButton> = ({
   title,
   onPress,
   color = 'primary',
