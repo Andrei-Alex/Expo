@@ -40,7 +40,7 @@ const ListingEditScreen: React.FC = () => {
           numberOfLines={3}
           placeholder="Description"
         />
-        <SubmitButton title="Post" />
+        <SubmitButton style={styles.button} title="Post" />
       </AppForm>
     </MainScreen>
   );

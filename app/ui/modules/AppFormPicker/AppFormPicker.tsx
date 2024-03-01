@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useFormikContext } from 'formik';
 import { AppPicker } from '../../features';
 import { ErrorMessage } from '../../components';
-import { IAppFormPicker } from '.';
+import { IAppFormPicker, styles } from '.';
 
 const AppFormPicker: React.FC<IAppFormPicker> = ({
   items,
@@ -13,6 +13,7 @@ const AppFormPicker: React.FC<IAppFormPicker> = ({
   return (
     <>
       <AppPicker
+        style={styles.picker}
         items={items}
         onSelectItem={(item) => setFieldValue(name, item)}
         placeholder={placeholder}

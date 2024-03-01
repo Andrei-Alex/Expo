@@ -49,7 +49,8 @@ const AppPicker: React.FC<IAppPicker> = ({
   icon,
   placeholder,
   modalTestId = 'modalPickerID',
-  pickerTestId = 'pickerTestID'
+  pickerTestId = 'pickerTestID',
+  style
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -59,7 +60,7 @@ const AppPicker: React.FC<IAppPicker> = ({
         onPress={() => setModalVisible(true)}
         testID={pickerTestId}
       >
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
           {icon && (
             <Icon
               name={icon}
