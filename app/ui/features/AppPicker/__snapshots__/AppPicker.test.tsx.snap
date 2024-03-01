@@ -21,14 +21,17 @@ exports[`AppPicker Component renders correctly with a placeholder 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    {
-      "backgroundColor": "#f8f4f4",
-      "borderRadius": 25,
-      "flexDirection": "row",
-      "marginVertical": 10,
-      "padding": 15,
-      "width": "100%",
-    }
+    [
+      {
+        "backgroundColor": "#f8f4f4",
+        "borderRadius": 25,
+        "flexDirection": "row",
+        "marginVertical": 10,
+        "padding": 15,
+        "width": "100%",
+      },
+      undefined,
+    ]
   }
   testID="pickerTestID"
 >
@@ -40,7 +43,7 @@ exports[`AppPicker Component renders correctly with a placeholder 1`] = `
           "fontSize": 20,
         },
         {
-          "color": "#0c0c0c",
+          "color": "#6e6969",
           "flex": 1,
           "fontFamily": "Avenir",
           "fontSize": 18,
