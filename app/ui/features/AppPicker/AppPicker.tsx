@@ -1,5 +1,6 @@
 import { AppText, Icon } from '../../atoms';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import {
   Button,
   FlatList,
@@ -48,7 +49,8 @@ const AppPicker: React.FC<IAppPicker> = ({
   icon,
   placeholder,
   modalTestId = 'modalPickerID',
-  pickerTestId = 'pickerTestID'
+  pickerTestId = 'pickerTestID',
+  style
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -58,7 +60,7 @@ const AppPicker: React.FC<IAppPicker> = ({
         onPress={() => setModalVisible(true)}
         testID={pickerTestId}
       >
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
           {icon && (
             <Icon
               name={icon}
@@ -68,7 +70,7 @@ const AppPicker: React.FC<IAppPicker> = ({
               style={styles.icon}
             />
           )}
-          <AppText style={styles.text}>
+          <AppText style={selectedItem ? styles.text : styles.placeholder}>
             {selectedItem ? selectedItem.label : placeholder}
           </AppText>
           <Icon
