@@ -1,6 +1,6 @@
 import { Image } from 'react-native';
 import * as React from 'react';
-import { MainScreen, AppTextInput, AppButton } from '../../ui';
+import { MainScreen, AppTextInput, AppButton, AppText } from '../../ui';
 
 import { Formik } from 'formik';
 
@@ -18,7 +18,7 @@ const LoginScreen: React.FC = () => {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit }) => (
+        {({ handleChange, handleSubmit, errors }) => (
           <>
             <AppTextInput
               style={styles.inputs}
@@ -30,6 +30,7 @@ const LoginScreen: React.FC = () => {
               textContentType={'emailAddress'}
               onChangeText={handleChange('email')}
             />
+            <AppText style={styles.error}>{errors.email}</AppText>
             <AppTextInput
               style={styles.inputs}
               placeholder={'Password'}
@@ -40,6 +41,7 @@ const LoginScreen: React.FC = () => {
               onChangeText={handleChange('password')}
               secureTextEntry
             />
+            <AppText>{errors.password}</AppText>
             <AppButton
               title={'Login'}
               onPress={handleSubmit}
