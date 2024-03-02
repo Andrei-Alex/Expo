@@ -24,9 +24,13 @@ const ListItem: React.FC<IListItem> = ({
             {IconComponent}
             {image && <Image style={styles.image} source={image} />}
             <View style={styles.detailsContainer}>
-              <AppText style={styles.title}>{title}</AppText>
+              <AppText style={styles.title} numberOfLines={1}>
+                {title}
+              </AppText>
               {subTitle && (
-                <AppText style={styles.subtitle}>{subTitle}</AppText>
+                <AppText style={styles.subtitle} numberOfLines={2}>
+                  {subTitle}
+                </AppText>
               )}
             </View>
             <Icon

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text } from 'react-native';
 
-import { styles, Props } from '.';
+import { styles, IAppText } from '.';
 
 /**
  * AppText Component
@@ -23,8 +23,12 @@ import { styles, Props } from '.';
  * @returns {React.ReactElement} A Text component with applied base and additional custom styles.
  */
 
-const AppText: React.FC<Props> = ({ children, style }) => {
-  return <Text style={[styles.text, style]}>{children}</Text>;
+const AppText: React.FC<IAppText> = ({ children, style, ...props }) => {
+  return (
+    <Text style={[styles.text, style]} {...props}>
+      {children}
+    </Text>
+  );
 };
 
 export default AppText;
