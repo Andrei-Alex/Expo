@@ -50,6 +50,7 @@ const AppPicker: React.FC<IAppPicker> = ({
   placeholder,
   modalTestId = 'modalPickerID',
   pickerTestId = 'pickerTestID',
+  PickerItemComponent = PickerItem,
   style,
   width = '100%'
 }) => {
@@ -94,7 +95,7 @@ const AppPicker: React.FC<IAppPicker> = ({
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <PickerItem
+              <PickerItemComponent
                 label={item.label}
                 onPress={() => {
                   setModalVisible(false);

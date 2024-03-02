@@ -1,5 +1,6 @@
 import { icons } from '../../atoms/Icon';
 import { DimensionValue, ViewStyle } from 'react-native';
+import { IPickerItem } from '../../components/PickerItem';
 
 export type item = {
   label: string;
@@ -8,12 +9,13 @@ export type item = {
 
 export interface IAppPicker {
   onSelectItem: (item: item) => void;
-  selectedItem: item;
+  selectedItem?: item;
   items: item[];
   icon?: icons;
   placeholder?: string;
   modalTestId?: string;
   pickerTestId?: string;
+  PickerItemComponent?: React.FC<IPickerItem>;
   style?: ViewStyle;
   width?: DimensionValue;
 }

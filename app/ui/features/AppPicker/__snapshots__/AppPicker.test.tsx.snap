@@ -28,9 +28,13 @@ exports[`AppPicker Component renders correctly with a placeholder 1`] = `
         "flexDirection": "row",
         "marginVertical": 10,
         "padding": 15,
-        "width": "100%",
       },
       undefined,
+      [
+        {
+          "width": "100%",
+        },
+      ],
     ]
   }
   testID="pickerTestID"

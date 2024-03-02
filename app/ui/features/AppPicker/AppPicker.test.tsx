@@ -9,6 +9,7 @@ describe('AppPicker Component', () => {
   it('renders correctly with a placeholder', () => {
     const component = renderer.create(
       <AppPicker
+        onSelectItem={onSelectItemMock}
         items={[
           { label: 'Item 1', value: 1 },
           { label: 'Item 2', value: 2 }
@@ -24,6 +25,7 @@ describe('AppPicker Component', () => {
   it('opens modal on touchable press', () => {
     const { getByTestId } = render(
       <AppPicker
+        onSelectItem={onSelectItemMock}
         items={[
           { label: 'Item 1', value: 1 },
           { label: 'Item 2', value: 2 }
