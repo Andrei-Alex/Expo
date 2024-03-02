@@ -1,5 +1,5 @@
 import { icons } from '../../atoms/Icon';
-import { ViewStyle } from 'react-native';
+import { DimensionValue, ViewStyle } from 'react-native';
 
 export type item = {
   label: string;
@@ -15,4 +15,5 @@ export interface IAppPicker {
   modalTestId?: string;
   pickerTestId?: string;
   style?: ViewStyle;
+  width?: DimensionValue;
 }

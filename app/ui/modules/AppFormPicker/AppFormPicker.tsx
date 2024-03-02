@@ -7,7 +7,8 @@ import { IAppFormPicker, styles } from '.';
 const AppFormPicker: React.FC<IAppFormPicker> = ({
   items,
   name,
-  placeholder
+  placeholder,
+  width
 }) => {
   const { errors, setFieldValue, touched, values } = useFormikContext();
   return (
@@ -18,6 +19,7 @@ const AppFormPicker: React.FC<IAppFormPicker> = ({
         onSelectItem={(item) => setFieldValue(name, item)}
         placeholder={placeholder}
         selectedItem={values[name]}
+        width={width}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>

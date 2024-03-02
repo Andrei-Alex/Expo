@@ -29,10 +29,11 @@ import { colors } from '../../../config';
 const AppTextInput: React.FC<IAppTextInput> = ({
   icon,
   style,
+  width = '100%',
   ...inputProps
 }) => {
   return (
-    <View style={[styles.container, style]}>
+    <View style={[styles.container, style, { width: width }]}>
       {icon && (
         <Icon
           name={icon}
