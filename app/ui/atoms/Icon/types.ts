@@ -8,6 +8,7 @@ export type icons =
   | 'chevron-down'
   | 'apps'
   | 'lock'
+  | 'camera'
   | 'chevron-right';
 
 export interface IIcon {
