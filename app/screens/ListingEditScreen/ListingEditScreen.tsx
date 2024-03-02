@@ -31,6 +31,7 @@ const ListingEditScreen: React.FC = () => {
           width={120}
         />
         <AppFormPicker
+          numberOfColumns={3}
           items={categories}
           PickerItemComponent={CategoryPickerItem}
           name="category"

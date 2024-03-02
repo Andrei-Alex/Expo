@@ -24,10 +24,10 @@ import { IPickerItem, styles } from '.';
  * @param {() => void} props.onPress - A callback function that is called when the item is pressed. This function can perform any action, such as updating the state to reflect the selected item.
  * @returns {React.ReactElement} A touchable, selectable item for use in custom picker components, styled according to the `styles` object.
  */
-const PickerItem: React.FC<IPickerItem> = ({ label, onPress }) => {
+const PickerItem: React.FC<IPickerItem> = ({ item, onPress }) => {
   return (
-    <TouchableOpacity onPress={() => onPress()} testID={label}>
-      <AppText style={styles.text}>{label}</AppText>
+    <TouchableOpacity onPress={() => onPress()} testID={item.label}>
+      <AppText style={styles.text}>{item.label}</AppText>
     </TouchableOpacity>
   );
 };

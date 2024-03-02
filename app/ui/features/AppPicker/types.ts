@@ -18,4 +18,5 @@ export interface IAppPicker {
   PickerItemComponent?: React.FC<IPickerItem>;
   style?: ViewStyle;
   width?: DimensionValue;
+  numberOfColumns?: number;
 }

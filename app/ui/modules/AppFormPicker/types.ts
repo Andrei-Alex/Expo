@@ -12,4 +12,5 @@ export interface IAppFormPicker {
   placeholder: string;
   width?: DimensionValue;
   PickerItemComponent?: React.FC<IPickerItem>;
+  numberOfColumns?: number;
 }

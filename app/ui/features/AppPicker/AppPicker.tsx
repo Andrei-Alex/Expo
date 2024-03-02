@@ -51,6 +51,7 @@ const AppPicker: React.FC<IAppPicker> = ({
   modalTestId = 'modalPickerID',
   pickerTestId = 'pickerTestID',
   PickerItemComponent = PickerItem,
+  numberOfColumns = 1,
   style,
   width = '100%'
 }) => {
@@ -93,10 +94,11 @@ const AppPicker: React.FC<IAppPicker> = ({
           <Button title={'Close'} onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}
+            numColumns={numberOfColumns}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
               <PickerItemComponent
-                label={item.label}
+                item={item}
                 onPress={() => {
                   setModalVisible(false);
                   onSelectItem(item);
