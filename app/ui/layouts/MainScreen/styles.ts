@@ -5,5 +5,8 @@ export const styles = StyleSheet.create({
   screen: {
     flex: 1,
     paddingTop: Constants.statusBarHeight
+  },
+  innerContainer: {
+    flex: 1
   }
 });
