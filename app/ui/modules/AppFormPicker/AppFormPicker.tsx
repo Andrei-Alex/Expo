@@ -8,7 +8,8 @@ const AppFormPicker: React.FC<IAppFormPicker> = ({
   items,
   name,
   placeholder,
-  width
+  width,
+  PickerItemComponent
 }) => {
   const { errors, setFieldValue, touched, values } = useFormikContext();
   return (
@@ -20,6 +21,7 @@ const AppFormPicker: React.FC<IAppFormPicker> = ({
         placeholder={placeholder}
         selectedItem={values[name]}
         width={width}
+        PickerItemComponent={PickerItemComponent}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>
