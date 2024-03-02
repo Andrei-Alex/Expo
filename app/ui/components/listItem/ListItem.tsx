@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { Image, TouchableHighlight, View } from 'react-native';
+
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { styles, IListItem } from './index';
-import { AppText } from '../../atoms';
+
+import { styles, IListItem } from '.';
+import { AppText, Icon } from '../../atoms';
 import { colors } from '../../../config';
 
 const ListItem: React.FC<IListItem> = ({
@@ -27,6 +29,12 @@ const ListItem: React.FC<IListItem> = ({
                 <AppText style={styles.subtitle}>{subTitle}</AppText>
               )}
             </View>
+            <Icon
+              name={'chevron-right'}
+              size={35}
+              backgroundColor={'transparent'}
+              iconColor={colors.medium}
+            />
           </View>
         </TouchableHighlight>
       </Swipeable>

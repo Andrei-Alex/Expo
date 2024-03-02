@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View } from 'react-native';
 
-import { styles, Props } from '.';
+import { styles, IIcon } from '.';
 import { colors } from '../../../config';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -33,7 +33,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
  * @param {string} [props.testID] - ID for Jest tests.
  * @returns {React.ReactElement} A customizable icon component that can be easily integrated into React Native applications.
  */
-const Icon: React.FC<Props> = ({
+const Icon: React.FC<IIcon> = ({
   name,
   size = 40,
   backgroundColor = colors.black,

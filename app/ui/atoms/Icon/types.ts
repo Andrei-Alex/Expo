@@ -7,13 +7,14 @@ export type icons =
   | 'home'
   | 'chevron-down'
   | 'apps'
-  | 'lock';
+  | 'lock'
+  | 'chevron-right';
 
-export type Props = {
+export interface IIcon {
   name: icons;
   size?: number;
   backgroundColor?: string;
   iconColor?: string | OpaqueColorValue;
   testID?: string;
   style?: ViewStyle;
-};
+}
