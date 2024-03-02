@@ -50,7 +50,10 @@ const AppPicker: React.FC<IAppPicker> = ({
   placeholder,
   modalTestId = 'modalPickerID',
   pickerTestId = 'pickerTestID',
-  style
+  PickerItemComponent = PickerItem,
+  numberOfColumns = 1,
+  style,
+  width = '100%'
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -60,7 +63,7 @@ const AppPicker: React.FC<IAppPicker> = ({
         onPress={() => setModalVisible(true)}
         testID={pickerTestId}
       >
-        <View style={[styles.container, style]}>
+        <View style={[styles.container, style, [{ width: width }]]}>
           {icon && (
             <Icon
               name={icon}
@@ -91,10 +94,11 @@ const AppPicker: React.FC<IAppPicker> = ({
           <Button title={'Close'} onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}
+            numColumns={numberOfColumns}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <PickerItem
-                label={item.label}
+              <PickerItemComponent
+                item={item}
                 onPress={() => {
                   setModalVisible(false);
                   onSelectItem(item);

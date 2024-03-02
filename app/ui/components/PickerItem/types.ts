@@ -1,4 +1,4 @@
 export interface IPickerItem {
-  label: string;
+  item: { label: string };
   onPress: () => void;
 }

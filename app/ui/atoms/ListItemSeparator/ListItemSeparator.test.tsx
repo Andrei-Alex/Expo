@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 
 import { colors } from '../../../config';
 import ListItemSeparator from './ListItemSeparator';

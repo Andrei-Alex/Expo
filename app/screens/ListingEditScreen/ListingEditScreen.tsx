@@ -5,7 +5,8 @@ import {
   AppFormField,
   MainScreen,
   SubmitButton,
-  AppFormPicker
+  AppFormPicker,
+  CategoryPickerItem
 } from '../../ui';
 
 const ListingEditScreen: React.FC = () => {
@@ -27,11 +28,15 @@ const ListingEditScreen: React.FC = () => {
           maxLength={8}
           name="price"
           placeholder="Price"
+          width={120}
         />
         <AppFormPicker
+          numberOfColumns={3}
           items={categories}
+          PickerItemComponent={CategoryPickerItem}
           name="category"
           placeholder="Category"
+          width={'50%'}
         />
         <AppFormField
           maxLength={255}

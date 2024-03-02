@@ -1,14 +1,11 @@
+import ListingEditScreen from './app/screens/ListingEditScreen/ListingEditScreen';
+
 if (__DEV__) {
   import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
 }
 
-import { MainScreen } from './app/ui/layouts';
-import ListingEditScreen from './app/screens/ListingEditScreen/ListingEditScreen';
+import MessagesScreen from './app/screens/MessageScreen/MessagesScreen';
 
 export default function App() {
-  return (
-    <MainScreen>
-      <ListingEditScreen />
-    </MainScreen>
-  );
+  return <ListingEditScreen />;
 }

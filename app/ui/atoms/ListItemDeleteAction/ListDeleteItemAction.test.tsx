@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 import ListDeleteItemAction from './ListDeleteItemAction';
 import { colors } from '../../../config';
 

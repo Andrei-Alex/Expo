@@ -1,6 +1,6 @@
-import { TextStyle } from 'react-native';
+import { TextStyle, TextProps } from 'react-native';
 
-export type Props = {
+export interface IAppText extends TextProps {
   children: React.ReactNode;
   style?: TextStyle;
-};
+}
