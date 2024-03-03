@@ -1,24 +1,19 @@
 if (__DEV__) {
   import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
 }
-import { useEffect } from 'react';
+import { useState } from 'react';
 
-import * as ImagePicker from 'expo-image-picker';
-import { MainScreen } from './app/ui';
+import { MainScreen, ImageInput } from './app/ui';
 
 export default function App() {
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-    if (!granted) {
-      alert('You need to enable permission to access the library');
-    }
-  };
-  useEffect(() => {
-    requestPermission();
-  }, []);
+  const [ImageUri, setImageUri] = useState<string | null>(null);
+
   return (
     <MainScreen>
-      <></>
+      <ImageInput
+        imageUri={ImageUri}
+        onChangeImage={(uri) => setImageUri(uri)}
+      />
     </MainScreen>
   );
 }
