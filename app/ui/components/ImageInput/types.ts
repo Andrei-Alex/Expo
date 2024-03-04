@@ -1,4 +1,4 @@
 export interface IImageInput {
-  imageUri: string;
+  imageUri?: string | null;
   onChangeImage: (string) => void;
 }

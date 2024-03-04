@@ -3,16 +3,25 @@ if (__DEV__) {
 }
 import { useState } from 'react';
 
-import { MainScreen, ImageInput } from './app/ui';
+import { MainScreen, ImageInputList } from './app/ui';
 
 export default function App() {
-  const [ImageUri, setImageUri] = useState<string | null>(null);
+  const [imageURIs, setImageURIs] = useState<string[] | null>([]);
+
+  const handleAdd = (uri) => {
+    setImageURIs([...imageURIs, uri]);
+  };
+
+  const handleRemove = (uri) => {
+    setImageURIs(imageURIs.filter((imageURI) => imageURI !== uri));
+  };
 
   return (
     <MainScreen>
-      <ImageInput
-        imageUri={ImageUri}
-        onChangeImage={(uri) => setImageUri(uri)}
+      <ImageInputList
+        imageURIs={imageURIs}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
       />
     </MainScreen>
   );
