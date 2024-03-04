@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
     borderRadius: 15,
     height: 100,
     justifyContent: 'center',
-    width: 100
+    width: 100,
+    overflow: 'hidden'
   },
   image: {
     width: '100%',
