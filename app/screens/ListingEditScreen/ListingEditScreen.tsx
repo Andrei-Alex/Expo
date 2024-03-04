@@ -1,15 +1,20 @@
 import * as React from 'react';
-import { categories, styles, validationSchema } from '.';
+
 import {
   AppForm,
   AppFormField,
   MainScreen,
   SubmitButton,
   AppFormPicker,
-  CategoryPickerItem
+  CategoryPickerItem,
+  AppFormImagePicker
 } from '../../ui';
 
+import { categories, styles, useLocation, validationSchema } from '.';
+
 const ListingEditScreen: React.FC = () => {
+  const [location] = useLocation();
+
   return (
     <MainScreen style={styles.container}>
       <AppForm
@@ -17,11 +22,13 @@ const ListingEditScreen: React.FC = () => {
           title: '',
           price: '',
           description: '',
-          category: null
+          category: null,
+          images: []
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => console.log(values, location)}
         validationSchema={validationSchema}
       >
+        <AppFormImagePicker name={'images'} />
         <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
           keyboardType="numeric"
