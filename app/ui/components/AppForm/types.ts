@@ -1,4 +1,4 @@
-export type FormValues = { [key: string]: string };
+export type FormValues = { [key: string]: string | string[] };
 import { SchemaOf } from 'yup';
 
 export interface IAppForm {

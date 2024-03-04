@@ -8,6 +8,7 @@ import {
   AppFormPicker,
   CategoryPickerItem
 } from '../../ui';
+import AppFormImagePicker from '../../ui/modules/AppFormImagePicker/AppFormImagePicker';
 
 const ListingEditScreen: React.FC = () => {
   return (
@@ -17,11 +18,13 @@ const ListingEditScreen: React.FC = () => {
           title: '',
           price: '',
           description: '',
-          category: null
+          category: null,
+          images: []
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
+        <AppFormImagePicker name={'images'} />
         <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
           keyboardType="numeric"

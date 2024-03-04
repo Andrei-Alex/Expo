@@ -23,8 +23,8 @@ const AppFormImagePicker: React.FC<IAppFormImagePicker> = ({ name }) => {
     <>
       <ImageInputList
         imageURIs={imageUris}
-        onRemoveImage={handleAdd}
-        onAddImage={handleRemove}
+        onRemoveImage={handleRemove}
+        onAddImage={handleAdd}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>
