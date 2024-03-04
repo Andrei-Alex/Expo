@@ -1,16 +1,20 @@
 import * as React from 'react';
-import { categories, styles, validationSchema } from '.';
+
 import {
   AppForm,
   AppFormField,
   MainScreen,
   SubmitButton,
   AppFormPicker,
-  CategoryPickerItem
+  CategoryPickerItem,
+  AppFormImagePicker
 } from '../../ui';
-import AppFormImagePicker from '../../ui/modules/AppFormImagePicker/AppFormImagePicker';
+
+import { categories, styles, useLocation, validationSchema } from '.';
 
 const ListingEditScreen: React.FC = () => {
+  const [location] = useLocation();
+
   return (
     <MainScreen style={styles.container}>
       <AppForm
@@ -21,7 +25,7 @@ const ListingEditScreen: React.FC = () => {
           category: null,
           images: []
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => console.log(values, location)}
         validationSchema={validationSchema}
       >
         <AppFormImagePicker name={'images'} />
