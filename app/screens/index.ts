@@ -5,3 +5,4 @@ export { default as ListingDetailsScreen } from './ListingDetailsScreen/ListingD
 export { default as AccountScreen } from './AccountScreen/AccountScreen';
 export { default as ListingScreen } from './ListingScreen/ListingScreen';
 export { default as LoginScreen } from './LoginScreen/LoginScreen';
+export { default as RegisterScreen } from './RegisterScreen/RegisterScreen';
