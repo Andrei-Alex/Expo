@@ -14,7 +14,7 @@ export const useLocation = () => {
         } = await Location.getLastKnownPositionAsync();
         setLocation({ latitude, longitude });
       } catch (e) {
-        console.error('Failed to retrive location.');
+        console.error('Failed to retrieve location.');
       }
     })();
   }, []);

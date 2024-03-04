@@ -9,6 +9,7 @@ export type icons =
   | 'apps'
   | 'lock'
   | 'camera'
+  | 'account'
   | 'chevron-right';
 
 export interface IIcon {
