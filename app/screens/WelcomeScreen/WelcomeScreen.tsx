@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Image, ImageBackground, Text, View } from 'react-native';
 
 import { styles } from '.';
-import { AppButton } from '../../ui/components';
+import { AppButton } from '../../ui';
 
-function WelcomeScreen() {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={2}
@@ -22,13 +22,13 @@ function WelcomeScreen() {
         <AppButton
           title={'Login'}
           onPress={() => {
-            console.log('Tapped');
+            navigation.navigate('Login');
           }}
         />
         <AppButton
           title={'Register'}
           onPress={() => {
-            console.log('Tapped');
+            navigation.navigate('Register');
           }}
           color={'secondary'}
         />
