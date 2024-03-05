@@ -25,13 +25,14 @@ import { AppText } from '../../ui/atoms';
  *
  * @returns {React.ReactElement} A screen component showcasing the details of a listing, including an image of the item, its title, and its price.
  */
-function ListingDetailsScreen() {
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
   return (
     <View>
-      <Image source={require('../../assets/jacket.jpg')} style={styles.image} />
+      <Image source={listing.image} style={styles.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Red Jacket for sale</AppText>
-        <AppText style={styles.price}>$100</AppText>
+        <AppText style={styles.title}>{listing.title}</AppText>
+        <AppText style={styles.price}>{listing.price}</AppText>
         <View style={styles.userContainer} />
       </View>
     </View>

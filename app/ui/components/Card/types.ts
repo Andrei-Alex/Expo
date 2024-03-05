@@ -4,4 +4,5 @@ export type Props = {
   title: string;
   subTitle: string;
   image: ImageSourcePropType;
+  onPress: () => void;
 };
