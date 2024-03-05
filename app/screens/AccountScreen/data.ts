@@ -16,6 +16,7 @@ export const menuItems: menuItem[] = [
     image: {
       name: 'format-list-bulleted',
       backgroundColor: colors.secondary
-    }
+    },
+    targetScreen: 'Messages'
   }
 ];

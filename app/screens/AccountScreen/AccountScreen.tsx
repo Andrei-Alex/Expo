@@ -3,10 +3,10 @@ import * as React from 'react';
 import { MainScreen } from '../../ui/layouts';
 import { ListItem } from '../../ui/components';
 import { FlatList, View } from 'react-native';
-import { styles, menuItems } from '.';
+import { styles, menuItems, IListingScreenProps } from '.';
 import { Icon, ListItemSeparator } from '../../ui/atoms';
 
-function AccountScreen() {
+const AccountScreen: React.FC<IListingScreenProps> = ({ navigation }) => {
   return (
     <MainScreen style={styles.screen}>
       <View style={styles.container}>
@@ -31,6 +31,7 @@ function AccountScreen() {
                   backgroundColor={item.image.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
           ItemSeparatorComponent={ListItemSeparator}
@@ -43,6 +44,6 @@ function AccountScreen() {
       />
     </MainScreen>
   );
-}
+};
 
 export default AccountScreen;
