@@ -1,12 +1,16 @@
-import { ImageSourcePropType } from 'react-native';
+import { icons } from '../../ui/atoms/Icon';
 import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
 export interface IListingScreenProps {
   navigation: NavigationProp<ParamListBase>;
 }
-export type ItemForSale = {
-  id: string;
+
+export interface menuItem {
+  key: string;
   title: string;
-  price: number;
-  image: ImageSourcePropType;
-};
+  image: {
+    name: icons;
+    backgroundColor: string;
+  };
+  targetScreen?: string;
+}

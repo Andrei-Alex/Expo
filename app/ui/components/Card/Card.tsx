@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image, View } from 'react-native';
+import { Image, TouchableWithoutFeedback, View } from 'react-native';
 
 import { styles, Props } from './index';
 import { AppText } from '../../atoms';
@@ -27,19 +27,21 @@ import { AppText } from '../../atoms';
  * @returns {React.ReactElement} A card component that displays an image, a title, and a subtitle, styled according to the `styles` object.
  */
 
-const Card: React.FC<Props> = ({ title, subTitle, image }) => {
+const Card: React.FC<Props> = ({ title, subTitle, image, onPress }) => {
   return (
-    <View style={styles.card}>
-      <Image source={image} style={styles.image} />
-      <View style={styles.detailsContainer}>
-        <AppText style={styles.title} numberOfLines={1}>
-          {title}
-        </AppText>
-        <AppText style={styles.subtitle} numberOfLines={2}>
-          {subTitle}
-        </AppText>
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <Image source={image} style={styles.image} />
+        <View style={styles.detailsContainer}>
+          <AppText style={styles.title} numberOfLines={1}>
+            {title}
+          </AppText>
+          <AppText style={styles.subtitle} numberOfLines={2}>
+            {subTitle}
+          </AppText>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 };
 
