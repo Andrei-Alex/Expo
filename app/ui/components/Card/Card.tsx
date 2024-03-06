@@ -28,10 +28,11 @@ import { AppText } from '../../atoms';
  */
 
 const Card: React.FC<Props> = ({ title, subTitle, image, onPress }) => {
+  console.log(image);
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <Image source={image} style={styles.image} />
+        <Image source={{ uri: image }} style={styles.image} />
         <View style={styles.detailsContainer}>
           <AppText style={styles.title} numberOfLines={1}>
             {title}
