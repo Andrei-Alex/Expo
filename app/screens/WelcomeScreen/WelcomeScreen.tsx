@@ -3,6 +3,7 @@ import { Image, ImageBackground, Text, View } from 'react-native';
 
 import { styles } from '.';
 import { AppButton } from '../../ui';
+import { routes } from '../../Navigation';
 
 function WelcomeScreen({ navigation }) {
   return (
@@ -22,13 +23,13 @@ function WelcomeScreen({ navigation }) {
         <AppButton
           title={'Login'}
           onPress={() => {
-            navigation.navigate('Login');
+            navigation.navigate(routes.LOGIN);
           }}
         />
         <AppButton
           title={'Register'}
           onPress={() => {
-            navigation.navigate('Register');
+            navigation.navigate(routes.REGISTER);
           }}
           color={'secondary'}
         />
