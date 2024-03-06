@@ -1,8 +1,10 @@
-import { dummyItems, IListingScreenProps, styles } from '.';
 import * as React from 'react';
 import { FlatList } from 'react-native';
+
 import { MainScreen } from '../../ui/layouts';
 import { Card } from '../../ui/components';
+import { routes } from '../../Navigation';
+import { dummyItems, IListingScreenProps, styles } from '.';
 
 const ListingScreen: React.FC<IListingScreenProps> = ({ navigation }) => {
   return (
@@ -15,7 +17,7 @@ const ListingScreen: React.FC<IListingScreenProps> = ({ navigation }) => {
             title={item.title}
             subTitle={'$' + item.price}
             image={item.image}
-            onPress={() => navigation.navigate('ListingDetails', item)}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
       />
