@@ -10,20 +10,37 @@ import { listingApi } from '../../services';
 import { ApiResponse } from 'apisauce';
 import { IApiItemForSale } from '../../services/layers/types';
 import { IListingScreenProps, styles } from '.';
+import { AppButton, AppText } from '../../ui';
 
 const ListingScreen: React.FC<IListingScreenProps> = ({ navigation }) => {
   const [listings, setListings] = useState<IApiItemForSale[]>([]);
+  const [error, setError] = useState(false);
+
+  const loadListings = async () => {
+    const response: ApiResponse<IApiItemForSale[]> =
+      await listingApi.getListings();
+    if (!response.ok) {
+      setError(true);
+      return;
+    }
+    setError(false);
+    setListings(response.data);
+  };
 
   useEffect(() => {
     (async () => {
-      const response: ApiResponse<IApiItemForSale[]> =
-        await listingApi.getListings();
-      setListings(response.data);
+      await loadListings();
     })();
   }, []);
 
   return (
     <MainScreen style={styles.screen}>
+      {error && (
+        <>
+          <AppText>Couldn't retrieve the listings</AppText>
+          <AppButton title={'Retry'} onPress={loadListings} />
+        </>
+      )}
       <FlatList
         data={listings}
         keyExtractor={(item) => item.id}
