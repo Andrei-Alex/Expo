@@ -40,15 +40,11 @@ export const AppNavigator = () => (
       })}
     />
     <Tab.Screen
-      name={'account'}
+      name={routes.ACCOUNT}
       component={AccountNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons
-            name={routes.ACCOUNT}
-            color={color}
-            size={size}
-          />
+          <MaterialCommunityIcons name={'account'} color={color} size={size} />
         )
       }}
     />
