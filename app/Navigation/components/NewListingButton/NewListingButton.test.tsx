@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
+import * as renderer from 'react-test-renderer';
 
 import NewListingButton from './NewListingButton';
-import * as renderer from 'react-test-renderer';
 
 describe('NewListingButton', () => {
   const onPressMock = jest.fn();
