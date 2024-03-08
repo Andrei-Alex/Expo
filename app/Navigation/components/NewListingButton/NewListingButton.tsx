@@ -21,10 +21,12 @@ import { colors } from '../../../config';
  * ```
  *
  * @component
- * @param {INewListingButton} props - The properties passed to the component.
- * @param {Function} props.onPress - The callback function that is called when the button is pressed. It should contain the action to be executed as part of the button's functionality.
- * @returns {React.ReactElement} A touch-responsive button component with a plus-circle icon, designed for adding new listings or similar actions in a React Native application.
- */
+ * @param {INewListingButton} props - The props passed to the component.
+ * @param {Function} props.onPress - A callback function triggered when the button is pressed. This function should handle the desired action for creating a new listing.
+ * @param {string} [props.testID='newListingButton'] - An optional ID used for testing purposes. Default is 'newListingButton'.
+ * @returns {React.ReactElement} A stylized, interactive button component featuring a plus-circle icon, intended for adding new listings or similar functions in a React Native app.
+ *
+ **/
 
 const NewListingButton: React.FC<INewListingButton> = ({
   onPress,
