@@ -16,11 +16,7 @@ const AppActivityIndicator: React.FC<IAppActivityIndicator> = ({
   return (
     <LottieView
       ref={animation}
-      style={{
-        width: 200,
-        height: 200,
-        backgroundColor: '#eee'
-      }}
+      style={styles.lottie}
       loop
       source={require('../../../assets/animations/loading.json')}
     />
