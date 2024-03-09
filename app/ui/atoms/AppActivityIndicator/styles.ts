@@ -1,7 +1,9 @@
 import { StyleSheet } from 'react-native';
 
-import { colors } from '../../../config';
-
 export const styles = StyleSheet.create({
-  container: {}
+  lottie: {
+    width: 200,
+    height: 200,
+    backgroundColor: '#eee'
+  }
 });
