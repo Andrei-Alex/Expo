@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 
 import {
   AppForm,
@@ -7,16 +8,24 @@ import {
   SubmitButton,
   AppFormPicker,
   CategoryPickerItem,
-  AppFormImagePicker
+  AppFormImagePicker,
+  UploadModal
 } from '../../ui';
 import { listingApi } from '../../services/';
 import { categories, styles, useLocation, validationSchema } from '.';
 
 const ListingEditScreen: React.FC = () => {
+  const [uploadVisible, setUploadVisible] = useState<boolean>(false);
+  const [progress, setProgress] = useState<number>(0);
   const [location] = useLocation();
 
   const handleSubmit = async (listing) => {
-    const result = await listingApi.addListing({ ...listing, location });
+    setUploadVisible(true);
+    const result = await listingApi.addListing(
+      { ...listing, location },
+      (progress) => setProgress(progress)
+    );
+    setUploadVisible(false);
     if (!result.ok) {
       return alert('Could not save the listing.');
     }
@@ -25,6 +34,7 @@ const ListingEditScreen: React.FC = () => {
 
   return (
     <MainScreen style={styles.container}>
+      <UploadModal progress={progress} visible={uploadVisible} />
       <AppForm
         initialValues={{
           title: '',
