@@ -9,11 +9,19 @@ import {
   CategoryPickerItem,
   AppFormImagePicker
 } from '../../ui';
-
+import { listingApi } from '../../services/';
 import { categories, styles, useLocation, validationSchema } from '.';
 
 const ListingEditScreen: React.FC = () => {
   const [location] = useLocation();
+
+  const handleSubmit = async (listing) => {
+    const result = await listingApi.addListing({ ...listing, location });
+    if (!result.ok) {
+      return alert('Could not save the listing.');
+    }
+    alert('Success');
+  };
 
   return (
     <MainScreen style={styles.container}>
@@ -25,7 +33,7 @@ const ListingEditScreen: React.FC = () => {
           category: null,
           images: []
         }}
-        onSubmit={(values) => console.log(values, location)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <AppFormImagePicker name={'images'} />
