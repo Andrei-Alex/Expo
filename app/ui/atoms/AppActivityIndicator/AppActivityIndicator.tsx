@@ -6,7 +6,8 @@ import LottieView from 'lottie-react-native';
 import { useEffect, useRef } from 'react';
 
 const AppActivityIndicator: React.FC<IAppActivityIndicator> = ({
-  visible = false
+  visible = false,
+  testID = 'lottie-activity'
 }) => {
   useEffect(() => {
     animation.current?.play();
@@ -15,6 +16,7 @@ const AppActivityIndicator: React.FC<IAppActivityIndicator> = ({
   if (!visible) return null;
   return (
     <LottieView
+      testID={testID}
       ref={animation}
       style={styles.lottie}
       loop
