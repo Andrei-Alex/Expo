@@ -1,5 +1,6 @@
 export interface IAppActivityIndicator {
   visible?: boolean;
+  testID?: string;
 }
 
 export interface LottieViewProps {
